@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFD400">
+  <meta name="description" content="گپینو؛ پیام‌رسان ایرانی">
+  <link rel="manifest" href="manifest.json">
+  <title>گپینو</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="app">
+
+    <!-- صفحه ورود -->
+    <section id="loginPage" class="page active">
+      <div class="auth-box">
+
+        <div class="logo">
+          <div class="logo-icon">💬</div>
+          <h1>گپینو</h1>
+        </div>
+
+        <p class="welcome">با گپینو همیشه در ارتباط باش!</p>
+
+        <form id="loginForm">
+          <input
+            id="loginUsername"
+            type="text"
+            placeholder="نام کاربری یا شماره موبایل"
+            required
+          >
+
+          <input
+            id="loginPassword"
+            type="password"
+            placeholder="رمز عبور"
+            required
+          >
+
+          <button type="submit" class="primary-btn">ورود</button>
+        </form>
+
+        <button id="showRegister" class="secondary-btn">
+          ساخت حساب جدید
+        </button>
+
+        <p id="loginMessage" class="message"></p>
+
+      </div>
+    </section>
+
+
+    <!-- صفحه ثبت نام -->
+    <section id="registerPage" class="page">
+      <div class="auth-box">
+
+        <div class="logo">
+          <div class="logo-icon">💬</div>
+          <h1>گپینو</h1>
+        </div>
+
+        <h2>ساخت حساب</h2>
+
+        <form id="registerForm">
+          <input
+            id="registerName"
+            type="text"
+            placeholder="نام شما"
+            required
+          >
+
+          <input
+            id="registerUsername"
+            type="text"
+            placeholder="نام کاربری"
+            required
+          >
+
+          <input
+            id="registerPassword"
+            type="password"
+            placeholder="رمز عبور"
+            required
+          >
+
+          <button type="submit" class="primary-btn">
+            ثبت نام
+          </button>
+        </form>
+
+        <button id="showLogin" class="secondary-btn">
+          بازگشت به ورود
+        </button>
+
+        <p id="registerMessage" class="message"></p>
+
+      </div>
+    </section>
+
+
+    <!-- برنامه اصلی -->
+    <section id="mainPage" class="page">
+
+      <header class="topbar">
+        <div class="brand">
+          <span class="mini-logo">💬</span>
+          <strong>گپینو</strong>
+        </div>
+
+        <button id="newChatBtn" class="icon-btn">＋</button>
+      </header>
+
+
+      <main class="content">
+
+        <!-- گفتگوها -->
+        <div id="chatsSection" class="tab-section active">
+
+          <div class="search-box">
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="جستجو در گفتگوها..."
+            >
+          </div>
+
+          <div id="chatList" class="chat-list">
+
+            <div class="empty-state">
+              <div class="empty-icon">💬</div>
+              <h3>هنوز گفتگویی ندارید</h3>
+              <p>برای شروع یک گفتگوی جدید ایجاد کنید.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- مخاطبین -->
+        <div id="contactsSection" class="tab-section">
+
+          <h2>مخاطبین</h2>
+
+          <div class="empty-state">
+            <div class="empty-icon">👥</div>
+            <p>مخاطبین شما اینجا نمایش داده می‌شوند.</p>
+          </div>
+
+        </div>
+
+
+        <!-- دستیار هوش مصنوعی -->
+        <div id="aiSection" class="tab-section">
+
+          <div class="ai-header">
+            <div class="ai-icon">🤖</div>
+            <div>
+              <h2>دستیار گپینو</h2>
+              <p>دستیار هوش مصنوعی</p>
+            </div>
+          </div>
+
+          <div id="aiMessages" class="messages">
+
+            <div class="message received">
+              سلام! من دستیار هوش مصنوعی گپینو هستم 🤖
+              <br>
+              چطور می‌تونم کمکت کنم؟
+            </div>
+
+          </div>
+
+          <form id="aiForm" class="message-form">
+            <input
+              id="aiInput"
+              type="text"
+              placeholder="پیامتان را بنویسید..."
+            >
+            <button type="submit">➤</button>
+          </form>
+
+        </div>
+
+
+        <!-- پروفایل -->
+        <div id="profileSection" class="tab-section">
+
+          <div class="profile-card">
+
+            <div class="profile-avatar">👤</div>
+
+            <h2 id="profileName">کاربر گپینو</h2>
+            <p id="profileUsername">@user</p>
+
+            <button id="logoutBtn" class="logout-btn">
+              خروج از حساب
+            </button>
+
+          </div>
+
+        </div>
+
+      </main>
+
+
+      <!-- نوار پایین -->
+      <nav class="bottom-nav">
+
+        <button class="nav-btn active" data-section="chatsSection">
+          <span>💬</span>
+          <small>گفتگوها</small>
+        </button>
+
+        <button class="nav-btn" data-section="contactsSection">
+          <span>👥</span>
+          <small>مخاطبین</small>
+        </button>
+
+        <button class="nav-btn" data-section="aiSection">
+          <span>🤖</span>
+          <small>دستیار</small>
+        </button>
+
+        <button class="nav-btn" data-section="profileSection">
+          <span>👤</span>
+          <small>پروفایل</small>
+        </button>
+
+      </nav>
+
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
